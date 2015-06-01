@@ -1,187 +1,391 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=1024, user-scalable=no">
-
-  <title>Terraform Intro</title>
-
-  <!-- Required stylesheet -->
-  <link rel="stylesheet" media="screen" href="core/deck.core.css">
-
-  <!-- Extension CSS files go here. Remove or add as needed. -->
-  <link rel="stylesheet" media="screen" href="extensions/goto/deck.goto.css">
-  <link rel="stylesheet" media="screen" href="extensions/menu/deck.menu.css">
-  <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
-  <link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
-  <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
-
-  <!-- Style theme. More available in /themes/style/ or create your own. -->
-  <link rel="stylesheet" media="screen" href="themes/style/swiss.css">
-
-  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
-  <link rel="stylesheet" media="screen" href="themes/transition/horizontal-slide.css">
-
-  <!-- Basic black and white print styles -->
-  <link rel="stylesheet" media="print" href="core/print.css">
-
-  <!-- Required Modernizr file -->
-  <script src="modernizr.custom.js"></script>
-</head>
-<body>
-  <div class="deck-container">
-
-    <!-- Begin slides. Just make elements with a class of slide. -->
-
-    <section class="slide">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=1024, user-scalable=no">
+    
+    <title>Docker</title>
+    
+    <!-- Required stylesheet -->
+    <link rel="stylesheet" media="screen" href="core/deck.core.css">
+    
+    <!-- Extension CSS files go here. Remove or add as needed. -->
+    <link rel="stylesheet" media="screen" href="extensions/goto/deck.goto.css">
+    <link rel="stylesheet" media="screen" href="extensions/menu/deck.menu.css">
+    <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
+    <link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
+    <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
+    
+    <!-- Style theme. More available in /themes/style/ or create your own. -->
+    <link rel="stylesheet" media="screen" href="themes/style/swiss.css">
+    
+    <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+    <link rel="stylesheet" media="screen" href="themes/transition/horizontal-slide.css">
+    
+    <!-- Basic black and white print styles -->
+    <link rel="stylesheet" media="print" href="core/print.css">
+    
+    <!-- Required Modernizr file -->
+    <script src="modernizr.custom.js"></script>
+  </head>
+  <body>
+    <div class="deck-container">
+      
+      <!-- Begin slides. Just make elements with a class of slide. -->
+      
+      <section class="slide">
         <div class="deck-slide-scaler deck-child-current" style="transform: scale(0.37375);" aria-hidden="false">
-            <h2>Problem?</h2>
-        
-            <ul class="deck-child-current">
-                <li class="slide deck-before" id="problem-one" aria-hidden=false>
-                    Infrastructure not documented
-                </li>
-                <li class="slide deck-before" id="problem-one" aria-hidden=false>
-                    No documentation as to how it evolved.
-                </li>
-                <li class="slide deck-before" id="problem-one" aria-hidden=false>
-                    Tedious to do it manually, and frightening for some one starting out new.
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="slide">
-        <div class="deck-slide-scaler deck-child-current" style="transform: scale(0.37375);" aria-hidden="false">
-            <h2>Terraform</h2>
-        
-            <ul class="deck-child-current">
-                <li class="slide deck-before" id="problem-one" aria-hidden=false>
-                    Easy to use
-                </li>
-                <li class="slide deck-before" id="problem-one" aria-hidden=false>
-                    Creates a resource graph
-                </li>
-                <li class="slide deck-before" id="problem-one" aria-hidden=false>
-                    Helps in Infrastructure versioning
-                </li>
-                <li class="slide deck-before" id="problem-one" aria-hidden=false>
-                    Works with multiple providers
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="slide">
-      <div class="deck-slide-scaler" style="transform: scale(0.92);">
-          <h2>Download</h2>
-          <a href="http://www.terraform.io/downloads.html">http://www.terraform.io/downloads.html</a>
-          <h3>Click on the MacOS X 64bit</h3>
-      </div>
-    </section>
-
-    <section class="slide">
-      <div class="deck-slide-scaler" style="transform: scale(0.92);">
-          <h2>Install</h2>
-              <ol class="deck-child-current">
-                  <li class="slide deck-before" id="problem-one" aria-hidden=false>Extract the Archive and save it in ~/.terraform folder</li>
-                  <li class="slide deck-before" id="problem-one" aria-hidden=false>in your ~/.bash_profile or ~/.profile add following:<br>
-                  <code>export PATH="$PATH:/Users/PRANAVGARG/.terraform"</code></li>
-                  <li class="slide deck-before" id="problem-one" aria-hidden=false>Run <strong>. ~/.profile</strong> or <strong>. ~/.bash_profile</strong></li>
-                  <li class="slide deck-before" id="problem-one" aria-hidden=false>Run <strong>terraform --version</strong> and you should see <strong>0.4.2</strong></li>
-              </ol>
+          <h2>Docker Knowledge Share</h2>
           
-      </div>
-    </section>
-     <section class="slide">
-      <div class="deck-slide-scaler" style="transform: scale(0.92);">
-          <h2>Questions?</h2>
-      </div>
-    </section>    
-    <section class="slide">
-      <div class="deck-slide-scaler" style="transform: scale(0.92);">
-          <h2>Concepts</h2>
-           <ol class="deck-child-current">
-                  <li class="slide deck-before" id="problem-one" aria-hidden=false><strong>variables</strong>
-                    <ul>
-                       <li>Input</li>
-                       <li>Output</li>
-                    </ul>
-                  </li>
-               
-                  <li class="slide deck-before" id="problem-one" aria-hidden=false><strong>resources</strong>
-                       <ul>
-                           <li>type</li>
-                           <li>name</li>
-                       </ul>
-                  </li>
-              </ol>
-      </div>
-    </section>
-    <section class="slide">
-      <div class="deck-slide-scaler" style="transform: scale(0.92);">
+          <h3>Zeph Grunschlag</h3>
+          <h4>EdLab</h4>
+          <h4>Monday June 1, 2015</h4>
+	  
+          <ul class="deck-child-current">
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+	      <strong>AGENDA</strong>
+            </li>
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+	      Introduction to Docker
+            </li>
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+	      Introduction to Toy Problem
+            </li>
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+	      Pair program solution to Toy Problem
+            </li>
+          </ul>
+        </div>
+      </section>
+      
+      <section class="slide">
+        <div class="deck-slide-scaler deck-child-current" style="transform: scale(0.37375);" aria-hidden="false">
+          <h2>Docker</h2>
+          
+	  <img src="http://www.nuxeo.com/wp-content/uploads/2014/01/homepage-docker-logo.png">
+          <ul class="deck-child-current">
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+              "Build, Ship and Run. Any App, Anywhere."
+            </li>
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+              Old Java <strong>WORA</strong> motto: "Write once, run anywhere."
+            </li>
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+	      "It worked in my development environment"
+            </li>
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+              Docker <strong>BORA</strong> motto: "Build once, run anywhere."
+            </li>
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+	      <a href="https://github.com/docker/docker">Open source and super popular on github!</a>
+	    </li>
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+	      "A Virtualization Technology"
+	    </li>
+
+          </ul>
+        </div>
+      </section>
+      
+      <section class="slide">
+        <div class="deck-slide-scaler deck-child-current" style="transform: scale(0.37375);" aria-hidden="false">
+          <h2>Docker - A Virtualization Technology</h2>
+          <ul class="deck-child-current">
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+	      How's it different from <strong>Virtual Box</strong> or <strong>VMWare</strong> ?
+	      <ul class="deck-child-current">
+                <li class="slide deck-before" id="problem-one" aria-hidden=false>
+		  Much <strong>lighter</strong> than 
+		  <a href="http://content.screencast.com/users/tzaffi/folders/Jing/media/e67576fb-b6da-4e82-a1d8-d848be99726a/00000216.png">an entire VM</a>
+                </li>		
+                <li class="slide deck-before" id="problem-one" aria-hidden=false>
+		  Maintains encapsulation and isolation of full blown VM
+		  <a href="https://raw.githubusercontent.com/MarouenMechtri/Docker-containers-deployment-with-OpenStack-Heat/master/images/docker-vs-hypervisor.jpg">without overhead</a>
+                </li>
+                <li class="slide deck-before" id="problem-one" aria-hidden=false>
+		  Good example: run Python 2.7 and Python 3.2 apps on same Ubuntu box
+		  without worrying about ANYTHING (even installing Python)
+                </li>
+                <li class="slide deck-before" id="problem-one" aria-hidden=false>
+		  Embraced by iPython / Jupyter community
+		</li>
+                <li class="slide deck-before" id="problem-one" aria-hidden=false>
+		  Travis - Open Source CI: Speed up test spin-offs by moving from VM's to containers
+		</li>
+                <li class="slide deck-before" id="problem-one" aria-hidden=false>
+		  <strong>DOWNSIDE:</strong> Security issues
+		</li>
+	      </ul>
+	    </li>
+		<!--
+Create virtual machines that run on top of physical hardware. 
+Allow multiple machines on top of one piece of hardware.
+PROBLEM: need entire OS for each VM.
+Uses "Linux Containers" bubbles of binaries and functionality that encapsulated and isolated 
+from the rest of the system. Multiple pieces of virtualization on top of one OS, without
+all the overhead of an entire OS. 
+Good example: can run Python 2.7 app on same VM as Python 3.2 machine without worrying about ANYTHING.
+		  -->
+          </ul>
+        </div>
+      </section>
+      
+      <section class="slide">
+        <div class="deck-slide-scaler deck-child-current" style="transform: scale(0.37375);" aria-hidden="false">
+          <h2>Docker Fundamentals</h2>
+          <ul class="deck-child-current">
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+	      <a href="https://docs.docker.com/article-img/architecture.svg">Docker Client and Host</a>
+            </li>
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+              Named <strong>Docker</strong> to evoke shipping container analogy.
+	      <ul class="deck-child-current">
+                <li class="slide deck-before" id="problem-one" aria-hidden=false>
+		  <a href="http://79.170.43.15/yalogistics.co.uk/blog/wp-content/uploads/2012/08/DSC05893.jpg">Containers:</a>
+		  Where all your work gets done.
+		  <br><code>%> docker run busybox /bin/echo "hello world"</code>
+                </li>		
+                <li class="slide deck-before" id="problem-one" aria-hidden=false>
+		  <a href="http://durhamtrainsofstanley.co.uk/my_store/images/zim40.jpg">Images</a>:
+		  Saved states of containers.
+		  <br><code>%> docker images</code>
+                </li>		
+                <li class="slide deck-before" id="problem-one" aria-hidden=false>
+		  <a href="http://farm8.staticflickr.com/7143/6756585311_6292d583cd.jpg">Registries</a>:
+		  For example <a href="http://content.screencast.com/users/tzaffi/folders/Jing/media/c35fb0e2-cebc-4898-8c3f-87031db51f6f/00000215.png">registry.hub.docker.com</a>
+                </li>	
+	      </ul>
+            </li>		
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+	      <a href="http://content.screencast.com/users/tzaffi/folders/Jing/media/6f195686-4d81-41a7-9031-0ec7e4805602/00000217.png">Docker vs. Git</a>
+	    </li>
+          </ul>
+        </div>
+      </section>
+      
+
+      <section class="slide">
+        <div class="deck-slide-scaler deck-child-current" style="transform: scale(0.37375);" aria-hidden="false">
+          <h2>Running Docker</h2>
+          <ul class="deck-child-current">
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+	      Locally:
+	      <ul>
+		<li> boot2docker </li>
+		<li> Kitematic </li>
+	      </ul>
+            </li>
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+	      Remotely:
+	      <ul>
+		<li> AWS </li>
+		<li> GAE </li>
+		<li> MS Azure </li>
+		<li> ... all the Linux based providers ... </li>
+	      </ul>
+            </li>
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+	      Agnostically: <a href="https://www.tutum.co/">tutum</a>
+	    </li>
+	    <li class="slide deck-before" id="problem-one" aria-hidden=false>
+	      Container specific hosting:
+	      <ul>
+		<li>AWS: EC2 Container Service</li>
+		<li>Google Container Engine</li>
+		<li>... even MS!!! </li>
+	      </ul>
+	    </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="slide">
+	<div class="deck-slide-scaler" style="transform: scale(0.92);">
+          <h2>Toy Project: Yodamemer</h2>
+          <ul class="deck-child-current">
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+	      Consider the memer app at <a href="http://52.6.217.231/Darth Maul/edlab/didn't want me">http://52.6.217.231</a>
+	    </li>
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+	      Eg. try: 
+	      <ul>
+		<li>Image: <strong>/Advice Yoda</strong></li>
+		<li>Top: <strong>/Meteor.js</strong></li>
+		<li>Bottom: <strong>shall you learn.</strong></li>
+	      </ul>
+	    </li>
+            <li class="slide deck-before" id="problem-one" aria-hidden=false> Summary:
+	      <img src="https://docs.google.com/drawings/d/1JFwoRcFDOQ5xaCyCT8NrjUKNgkT84seu0_xscZgmDAw/pub?w=960&h=720">
+	    </li>
+          </ul>          
+	</div>
+      </section>
+
+      <section class="slide">
+	<div class="deck-slide-scaler" style="transform: scale(0.92);">
+          <h2>Toy Project: Yodamemer</h2>
+          <ul class="deck-child-current">
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+	      GOAL: Given an English phrase, create a special meme that:
+	      <ol>
+		<li>Converts the English phrase to Yodaspeak
+		  E.g. <strong>I love strong coffee in the morning</strong> &rarr; <strong>Strong coffee in the morning I love</strong>
+		<li>Figures out if the phrase is <strong>positive</strong> or <strong>negative</strong></li>
+		<li>Uses Yoda if <strong>positive</strong> or Darth Maul <strong>negative</strong></li>
+	      </ol>
+	    </li>
+            <li class="slide deck-before" id="problem-one" aria-hidden=false> Flow:
+	      <img src="https://docs.google.com/drawings/d/1ZvWHg_IcXI2dTDdtZKm8SepQOAsuc5OZeJP8GqBK1sY/pub?w=1212&h=1277">
+	    </li>
+          </ul>          
+	</div>
+      </section>
+
+      <section class="slide">
+	<div class="deck-slide-scaler" style="transform: scale(0.92);">
+          <h2>Docker Installation on the Mac</h2>
+          <ul class="deck-child-current">
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+              Download: <a href="https://kitematic.com/download">kitematic.com/download</a>
+            </li>
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+	      Were you able to start the docker shell from Kitematic?
+	      <img src="http://content.screencast.com/users/tzaffi/folders/Jing/media/48625ea3-338e-4338-8e94-631219ab13b4/00000218.png">
+	    </li>
+          </ul>          
+	</div>
+      </section>
+
+
+      <section class="slide">
+	<div class="deck-slide-scaler" style="transform: scale(0.92);">
+          <h2>Yodamemer Exercises</h2>
+          <ol class="deck-child-current">
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+	      Choose teams. <br>
+	      At least 1 should have AWS access and 1 should know how to install and run a node.js project:
+	      <a href="https://docs.google.com/spreadsheets/d/1X2cpfYccu_aduOyby3WnnCbiZqr7Wkt7PhKQkOQTfqU/edit?usp=sharing">Task Sheet</a>
+	      <strong>http://bit.ly/1BCUBj1</strong>
+            </li>
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+	      Run your task locally <strong>WITHOUT</strong> Docker (need node.js)
+	      <ol>
+		<li>Download the relevant files from task spreadsheet into new directory</li>
+		<li>run <strong>npm install</strong></li>
+		<li>You'll need to put the <strong>MASHAPE KEY</strong> into the config.json
+		<li>See if you can figure out from your <strong>Dockerfile</strong> which command will get your app running</li>
+		<li>See if you can figure out from your <strong>Dockerfile</strong> how to test your app</li>
+	      </ol>
+	    </li>
+
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+	      Dockerize your application <strong>LOCALLY</strong> 
+	      <ol>
+		<li>Build your docker image with <br>
+		  <code>docker build -t YOUR_IMAGE_NAME .</code>
+		</li>
+		<li>run your docker container with <br>
+		  <code>docker run -p YOUR_LOCAL_PORT:8000 -d YOUR_IMAGE_NAME</code>
+		</li>
+	      </ol>
+	    </li>
+
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+	      Dockerize your application on <strong>EC2</strong>  <br>
+	      Basically the same steps as on the mac. <br>
+	      It might help to run the following (but be careful about 
+	      which files you use and make sure that they are at the correct depth)<br>
+	      <code>git clone https://github.com/tzaffi/my-mashapes.git</code>
+	    </li>
+
+          </ul>          
+	</div>
+      </section>
+      
+      
+
+      <section class="slide">
+	<div class="deck-slide-scaler" style="transform: scale(0.92);">
+          <h2>References</h2>
+          <ol class="deck-child-current">
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+	      <a href="https://www.docker.com">Docker.com</a>
+            </li>
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+	      <a href="https://www.youtube.com/watch?v=Av2Umb6nELU">Docker in 5 minutes on YouTube</a>
+            </li>            
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>
+	      <a href="https://www.youtube.com/watch?v=YiZkHUbE6N0">Andrew Baker's Tutorial Intro. Vid PyCon 2015</a>
+	    </li>
+	    <li class="slide deck-before" id="problem-one" aria-hidden=false>
+	      <a href="http://docker.atbaker.me/">Andrew Baker's Awesome Tutorial Exercises</a>
+	    </li>
+          </ol>
+	</div>
+      </section>
+
+      <section class="slide">
+	<div class="deck-slide-scaler" style="transform: scale(0.92);">
           <h2>Important Commands</h2>
-           <ol class="deck-child-current">
-                  <li class="slide deck-before" id="problem-one" aria-hidden=false><strong>terraform show</strong>: output of the instance services with it’s resources details that are up  </li>
-                  <li class="slide deck-before" id="problem-one" aria-hidden=false><strong>terraform plan</strong>: shows what would happen when the command (destroy/apply) will run</li>
-                  <li class="slide deck-before" id="problem-one" aria-hidden=false><strong>terraform destroy</strong>: destroys the instance</li>
-                  <li class="slide deck-before" id="problem-one" aria-hidden=false><strong>terraform apply</strong>:tears down the old instance and creates a new one if it seees a diff in the terraform file</li>
-                <li class="slide deck-before" id="problem-one" aria-hidden=false><strong>terraform apply</strong>: tears down the old instance and creates a new one if it seees a diff in the terraform file</li>
-               <li class="slide deck-before" id="problem-one" aria-hidden=false><strong>terraform graph</strong>: creates the graphical view of the dependency. Note: you can specify the depth-level too [Graphviz required]</li>
-              </ol>
-      </div>
-    </section>
-    <section class="slide">
-      <div class="deck-slide-scaler" style="transform: scale(0.92);">
-          <h2>Demo</h2>
-      </div>
-    </section>
-  
-    <!-- End slides. -->
+          <ol class="deck-child-current">
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>TL;DD
+	    </li>
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>TL;DD
+	    </li>
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>TL;DD
+	    </li>
+            <li class="slide deck-before" id="problem-one" aria-hidden=false>TL;DD
+	    </li>
+          </ol>
+	</div>
+      </section>
 
-    <!-- Begin extension snippets. Add or remove as needed. -->
-
-    <!-- deck.navigation snippet -->
-    <div aria-role="navigation">
-      <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
-      <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+      <!-- End slides. -->
+      
+      <!-- Begin extension snippets. Add or remove as needed. -->
+      
+      <!-- deck.navigation snippet -->
+      <div aria-role="navigation">
+	<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+	<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+      </div>
+      
+      <!-- deck.status snippet -->
+      <p class="deck-status" aria-role="status">
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+      </p>
+      
+      <!-- deck.goto snippet -->
+      <form action="." method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+	<datalist id="goto-datalist"></datalist>
+	<input type="submit" value="Go">
+      </form>
+      
+      <!-- End extension snippets. -->
     </div>
-
-    <!-- deck.status snippet -->
-    <p class="deck-status" aria-role="status">
-      <span class="deck-status-current"></span>
-      /
-      <span class="deck-status-total"></span>
-    </p>
-
-    <!-- deck.goto snippet -->
-    <form action="." method="get" class="goto-form">
-      <label for="goto-slide">Go to slide:</label>
-      <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
-      <datalist id="goto-datalist"></datalist>
-      <input type="submit" value="Go">
-    </form>
-
-    <!-- End extension snippets. -->
-  </div>
-
-<!-- Required JS files. -->
-<script src="jquery.min.js"></script>
-<script src="core/deck.core.js"></script>
-
-<!-- Extension JS files. Add or remove as needed. -->
-<script src="extensions/menu/deck.menu.js"></script>
-<script src="extensions/goto/deck.goto.js"></script>
-<script src="extensions/status/deck.status.js"></script>
-<script src="extensions/navigation/deck.navigation.js"></script>
-<script src="extensions/scale/deck.scale.js"></script>
-
-<!-- Initialize the deck. You can put this in an external file if desired. -->
-<script>
-  $(function() {
-    $.deck('.slide');
-  });
-</script>
-</body>
+    
+    <!-- Required JS files. -->
+    <script src="jquery.min.js"></script>
+    <script src="core/deck.core.js"></script>
+    
+    <!-- Extension JS files. Add or remove as needed. -->
+    <script src="extensions/menu/deck.menu.js"></script>
+    <script src="extensions/goto/deck.goto.js"></script>
+    <script src="extensions/status/deck.status.js"></script>
+    <script src="extensions/navigation/deck.navigation.js"></script>
+    <script src="extensions/scale/deck.scale.js"></script>
+    
+    <!-- Initialize the deck. You can put this in an external file if desired. -->
+    <script>
+      $(function() {
+      $.deck('.slide');
+      });
+    </script>
+  </body>
 </html>
+
